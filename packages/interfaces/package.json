@@ -1,0 +1,28 @@
+{
+  "name": "@darwinia/types",
+  "version": "1.14.0-beta.18",
+  "description": "Implementation of the Parity codec",
+  "main": "index.js",
+  "keywords": [
+    "Polkadot",
+    "JsonRPC"
+  ],
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "maintainers": [
+    "Jaco Greeff <jacogr@gmail.com>"
+  ],
+  "contributors": [],
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polkadot-js/api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/polkadot-js/api/issues"
+  },
+  "homepage": "https://github.com/polkadot-js/api/tree/master/packages/types#readme"
+}

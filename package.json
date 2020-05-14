@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/polkadot-js/api",
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "license": "Apache-2",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "resolutions": {
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "build": "yarn build:interfaces && polkadot-dev-build-ts && (cd packages/typegen && copyfiles scripts/* build)",
+    "build:interfaces": "polkadot-types-internal-interfaces",
+    "build:release": "polkadot-ci-ghact-build",
+    "docs": "polkadot-types-internal-metadata && polkadot-dev-build-docs",
+    "docs:release": "polkadot-ci-ghact-docs",
+    "chain:info": "polkadot-types-chain-info",
+    "lint": "polkadot-dev-run-lint",
+    "clean": "polkadot-dev-clean-build",
+    "postinstall": "polkadot-dev-yarn-only",
+    "test": "polkadot-dev-run-test --coverage --runInBand --testPathIgnorePatterns e2e",
+    "test:one": "polkadot-dev-run-test",
+    "test:watch": "polkadot-dev-run-test --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.6",
+    "@polkadot/dev": "^0.52.19",
+    "@polkadot/ts": "^0.3.21",
+    "@polkadot/typegen": "workspace:packages/typegen",
+    "@types/jest": "^25.2.1",
+    "@vuepress/plugin-search": "^1.4.1",
+    "copyfiles": "^2.2.0"
+  }
+}
