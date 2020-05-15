@@ -1,16 +1,18 @@
 // Auto-generated via `yarn polkadot-types-from-chain`, do not edit
 /* eslint-disable */
 
+import { Codec } from '@polkadot/types/types';
 import { Bytes, u32, u64, u8 } from '@polkadot/types/primitive';
+import { EthNetworkType, KtonBalance, Power, RingBalance } from '@darwinia/types/interfaces/darwiniaInject';
 import { Balance, BalanceOf, BlockNumber, LockIdentifier, ModuleId, Moment, Percent, Permill, RuntimeDbWeight, Weight } from '@polkadot/types/interfaces/runtime';
 import { SessionIndex } from '@polkadot/types/interfaces/session';
 import { EraIndex } from '@polkadot/types/interfaces/staking';
-import { EthNetworkType, KtonBalance, Power, RingBalance } from './darwiniaInject';
 
 declare module '@polkadot/metadata/Decorated/consts/types' {
   export interface Constants {
+    [index: string]: ModuleConstants;
     babe: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The number of **slots** that an epoch takes. We couple sessions to
        * epochs, i.e. we start a new session once the new epoch begins.
@@ -26,21 +28,21 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       expectedBlockTime: AugmentedConst<Moment>;
     };
     balances: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The minimum amount required to keep an account open.
        **/
       existentialDeposit: AugmentedConst<Balance>;
     };
     claims: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The Prefix that is used in signed Ethereum messages for this network
        **/
       prefix: AugmentedConst<Bytes>;
     };
     electionsPhragmen: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       candidacyBond: AugmentedConst<BalanceOf>;
       desiredMembers: AugmentedConst<u32>;
       desiredRunnersUp: AugmentedConst<u32>;
@@ -49,7 +51,7 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       votingBond: AugmentedConst<BalanceOf>;
     };
     ethBacking: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The treasury's module id, used for deriving its sovereign account ID.
        **/
@@ -57,15 +59,15 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       subKeyPrefix: AugmentedConst<u8>;
     };
     ethOffchain: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       fetchInterval: AugmentedConst<BlockNumber>;
     };
     ethRelay: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       ethNetwork: AugmentedConst<EthNetworkType>;
     };
     finalityTracker: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The delay after which point things become suspicious. Default is 1000.
        **/
@@ -76,7 +78,7 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       windowSize: AugmentedConst<BlockNumber>;
     };
     identity: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The amount held on deposit for a registered identity.
        **/
@@ -107,14 +109,14 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       subAccountDeposit: AugmentedConst<BalanceOf>;
     };
     kton: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The minimum amount required to keep an account open.
        **/
       existentialDeposit: AugmentedConst<Balance>;
     };
     society: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The minimum amount of a deposit required for a bid to be made.
        **/
@@ -147,7 +149,7 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       wrongSideDeduction: AugmentedConst<BalanceOf>;
     };
     staking: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * Number of BlockNumbers that staked funds must remain bonded for.
        **/
@@ -164,7 +166,7 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       totalPower: AugmentedConst<Power>;
     };
     system: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The base weight of executing a block, independent of the transactions in the block.
        **/
@@ -187,7 +189,7 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       maximumBlockWeight: AugmentedConst<Weight>;
     };
     timestamp: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The minimum period between blocks. Beware that this is different to the *expected* period
        * that the block production apparatus provides. Your chosen consensus system will generally
@@ -197,14 +199,14 @@ declare module '@polkadot/metadata/Decorated/consts/types' {
       minimumPeriod: AugmentedConst<Moment>;
     };
     transactionPayment: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * The fee to be paid for making a transaction; the per-byte portion.
        **/
       transactionByteFee: AugmentedConst<BalanceOf>;
     };
     treasury: {
-
+      [index: string]: AugmentedConst<object & Codec>;
       /**
        * Percentage of spare funds (if any) that are burnt per spend period.
        **/
