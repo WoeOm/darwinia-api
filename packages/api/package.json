@@ -1,46 +1,36 @@
 {
-  "name": "@polkadot/api",
-  "version": "1.14.0-beta.18",
-  "description": "Promise and RxJS wrappers around the Polkadot JS RPC",
-  "main": "index.js",
-  "keywords": [
-    "Polkadot",
-    "RxJs"
-  ],
-  "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [
-    "Jaco Greeff <jacogr@gmail.com>"
-  ],
-  "contributors": [],
-  "license": "Apache-2.0",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/polkadot-js/api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/polkadot-js/api/issues"
-  },
-  "homepage": "https://github.com/polkadot-js/api/tree/master/packages/api#readme",
-  "dependencies": {
-    "@babel/runtime": "^7.9.6",
-    "@polkadot/api-derive": "1.14.0-beta.18",
-    "@polkadot/keyring": "^2.10.0-beta.5",
-    "@polkadot/metadata": "1.14.0-beta.18",
-    "@polkadot/rpc-core": "1.14.0-beta.18",
-    "@polkadot/rpc-provider": "1.14.0-beta.18",
-    "@polkadot/types": "1.14.0-beta.18",
-    "@polkadot/types-known": "1.14.0-beta.18",
-    "@polkadot/util": "^2.10.0-beta.5",
-    "@polkadot/util-crypto": "^2.10.0-beta.5",
-    "bn.js": "^5.1.1",
-    "eventemitter3": "^4.0.1",
-    "rxjs": "^6.5.5"
-  },
-  "devDependencies": {
-    "@polkadot/keyring": "^2.10.0-beta.5"
+    "name": "@darwinia/api",
+    "version": "1.14.0-beta.18",
+    "description": "Promise and RxJS wrappers around the Polkadot JS RPC",
+    "main": "index.js",
+    "keywords": [
+      "Polkadot",
+      "RxJs"
+    ],
+    "author": "Jaco Greeff <jacogr@gmail.com>",
+    "maintainers": [
+      "Jaco Greeff <jacogr@gmail.com>"
+    ],
+    "contributors": [],
+    "license": "Apache-2.0",
+    "publishConfig": {
+      "access": "public",
+      "registry": "https://registry.npmjs.org"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/polkadot-js/api.git"
+    },
+    "bugs": {
+      "url": "https://github.com/polkadot-js/api/issues"
+    },
+    "homepage": "https://github.com/polkadot-js/api/tree/master/packages/api#readme",
+    "dependencies": {
+      "@babel/runtime": "^7.9.6",
+      "@polkadot/keyring": "^2.10.0-beta.5",
+      "@polkadot/api": "1.14.0-beta.18",
+      "@polkadot/rpc-provider": "1.14.0-beta.18",
+      "@darwinia/api-options": "1.14.0-beta.18"
+    }
   }
-}
+  
