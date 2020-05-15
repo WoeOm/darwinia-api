@@ -6,8 +6,10 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 
 import { TypeRegistry, Option } from '@polkadot/types';
 
-import * as definitions from '@darwinia/types/definitions';
-import type { StakingLedgerT } from '@darwinia/types';
+import * as definitions from '@darwinia/types/interfaces/definitions';
+import jsonrpc from '@darwinia/types/interfaces/jsonrpc';
+
+import type { StakingLedgerT } from '@darwinia/types/interfaces';
 
 import * as balances from '@polkadot/api-derive/balances';
 import { UnsubscribePromise } from '@polkadot/api/types';
@@ -15,12 +17,16 @@ import { UnsubscribePromise } from '@polkadot/api/types';
 let api: ApiPromise;
 
 beforeAll(async () => {
+  console.log('beforeAll');
   const registry = new TypeRegistry();
   const types = Object.values(definitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
   const provider = new WsProvider('wss://crab.darwinia.network');
 
   api = await ApiPromise.create({
     provider,
+    rpc: {
+      ...jsonrpc
+    },
     types: {
       ...types
       // aliasses that don't do well as part of interfaces
@@ -43,6 +49,7 @@ beforeAll(async () => {
 });
 
 afterAll(() => {
+  console.log('afterAll');
   api && api.disconnect();
 });
 
@@ -61,6 +68,54 @@ describe('Balances Module', (): void => {
         transferFee);
       expect(existentialDeposit.toString()).not.toEqual('0');
       expect(transactionByteFee.toString()).not.toEqual('0');
+      done();
+    });
+  });
+
+  it('all', (done): void => {
+    api.derive.balances.all('5HE1gjo5cRP5Xzf42zrc3gExws6zqrtnMsHTi3jZ5KbLpKnd', ({ accountId,
+      accountNonce,
+      availableBalance,
+      availableBalanceKton,
+      freeBalance,
+      freeBalanceKton,
+      frozenFee,
+      frozenMisc,
+      isVesting,
+      lockedBalance,
+      lockedBalanceKton,
+      lockedBreakdown,
+      lockedBreakdownKton,
+      reservedBalance,
+      reservedBalanceKton,
+      vestedBalance,
+      vestingTotal,
+      votingBalance,
+      votingBalanceKton }) => {
+      // balanceAll.toHuman()
+      const result = { accountId,
+        accountNonce,
+        availableBalance,
+        availableBalanceKton,
+        freeBalance,
+        freeBalanceKton,
+        frozenFee,
+        frozenMisc,
+        isVesting,
+        lockedBalance,
+        lockedBalanceKton,
+        lockedBreakdown,
+        lockedBreakdownKton,
+        reservedBalance,
+        reservedBalanceKton,
+        vestedBalance,
+        vestingTotal,
+        votingBalance,
+        votingBalanceKton };
+
+      console.log(JSON.stringify(result, null, 2));
+      // expect(existentialDeposit.toString()).not.toEqual('0');
+      // expect(transactionByteFee.toString()).not.toEqual('0');
       done();
     });
   });

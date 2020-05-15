@@ -6,6 +6,7 @@ import type BN from 'bn.js';
 import { AccountId, Balance, BalanceLock, BalanceLockTo212, BalanceOf, Bid, BidKind, BlockNumber, Hash, Index, Proposal, ProposalIndex, SetIndex, SocietyVote, StrikeCount, TreasuryProposal, Votes, VoteIndex, VouchingStatus } from '@polkadot/types/interfaces';
 
 import { u32 } from '@polkadot/types';
+import { DerivedBalanceLock } from './balances/types';
 
 export * from './accounts/types';
 export * from './council/types';
@@ -30,8 +31,11 @@ export interface DeriveBalancesAccount {
 export interface DeriveBalancesAll extends DeriveBalancesAccount {
   isVesting: boolean;
   lockedBalance: Balance;
-  lockedBreakdown: (BalanceLock | BalanceLockTo212)[];
+  lockedBalanceKton: Balance;
+  lockedBreakdown: DerivedBalanceLock[];
+  lockedBreakdownKton: DerivedBalanceLock[];
   availableBalance: Balance;
+  availableBalanceKton: Balance;
   votingBalance: Balance;
   vestedBalance: Balance;
   vestingTotal: Balance;

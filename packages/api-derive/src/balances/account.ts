@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { AccountId, AccountIndex, Address, Balance, Index } from '@polkadot/types/interfaces';
-import { AccountData } from '@darwinia/types';
+import { AccountData } from '@darwinia/types/interfaces';
 import { AccountInfo } from './types';
 import { ITuple } from '@polkadot/types/types';
 import { DeriveBalancesAccount } from '../types';
@@ -16,15 +16,18 @@ import { memo } from '../util';
 
 type Result = [Balance, Balance, Balance, Balance, Balance, Balance, Index];
 
-function calcBalances (api: ApiInterfaceRx, [accountId, [freeBalance, reservedBalance, frozenFee, frozenMisc, accountNonce]]: [AccountId, Result]): DeriveBalancesAccount {
+function calcBalances (api: ApiInterfaceRx, [accountId, [freeBalance, freeBalanceKton, reservedBalance, reservedBalanceKton, frozenFee, frozenMisc, accountNonce]]: [AccountId, Result]): DeriveBalancesAccount {
   return {
     accountId,
     accountNonce,
     freeBalance,
+    freeBalanceKton,
     frozenFee,
     frozenMisc,
     reservedBalance,
-    votingBalance: api.registry.createType('Balance', freeBalance.add(reservedBalance))
+    reservedBalanceKton,
+    votingBalance: api.registry.createType('Balance', freeBalance.add(reservedBalance)),
+    votingBalanceKton: api.registry.createType('Balance', freeBalanceKton.add(reservedBalanceKton))
   };
 }
 

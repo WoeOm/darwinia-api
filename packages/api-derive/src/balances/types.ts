@@ -8,7 +8,7 @@ import { Compact, Enum, HashMap, Option, Result, Struct, U8aFixed, Vec } from '@
 import { BlockNumber, Digest, Hash, Index } from '@polkadot/types/interfaces/runtime';
 import { Bytes, Text, bool, u32, u64, u8 } from '@polkadot/types/primitive';
 
-import { AccountData, LockReasons } from '@darwinia/types';
+import { AccountData, Reasons } from '@darwinia/types/interfaces';
 
 /** @name RefCount */
 export interface RefCount extends u8 {}
@@ -25,5 +25,5 @@ export type DerivedBalanceLock = {
   id: LockIdentifier;
   amount: Balance;
   until: BlockNumber;
-  reasons: LockReasons;
+  reasons: Reasons;
 }
