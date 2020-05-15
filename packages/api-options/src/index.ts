@@ -4,7 +4,7 @@
 
 import * as definitions from '@darwinia/types/interfaces/definitions';
 import jsonrpc from '@darwinia/types/interfaces/jsonrpc';
-import { derive as darwiniaDerive } from '@polkadot/api-derive';
+import { derive as darwiniaDerive } from '@darwinia/api-derive';
 import { ApiOptions } from '@polkadot/api/types';
 
 const darwiniaTypes = Object.values(definitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
