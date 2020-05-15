@@ -1,0 +1,26 @@
+// Copyright 2017-2020 @polkadot/api authors & contributors
+// This software may be modified and distributed under the terms
+// of the Apache-2.0 license. See the LICENSE file for details.
+
+import * as definitions from '@darwinia/types/interfaces/definitions';
+import jsonrpc from '@darwinia/types/interfaces/jsonrpc';
+import { derive as darwiniaDerive } from '@polkadot/api-derive';
+import { ApiOptions } from '@polkadot/api/types';
+
+const darwiniaTypes = Object.values(definitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
+
+export default ({ derives, rpc, types, ...customApiOptions }: ApiOptions): ApiOptions => ({
+  derives: {
+    ...darwiniaDerive,
+    ...derives
+  },
+  rpc: {
+    ...jsonrpc,
+    ...rpc
+  },
+  types: {
+    ...darwiniaTypes,
+    ...types
+  },
+  ...customApiOptions
+});
