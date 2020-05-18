@@ -9,7 +9,11 @@ import { ApiOptions } from '@polkadot/api/types';
 
 const darwiniaTypes = Object.values(definitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
 
-export default ({ derives, rpc, types, ...customApiOptions }: ApiOptions): ApiOptions => ({
+export const ZERO_OPTIONS: ApiOptions = {
+  derives: {}, rpc: {}, types: {}
+};
+
+export default ({ derives, rpc, types, ...customApiOptions }: ApiOptions = ZERO_OPTIONS): ApiOptions => ({
   derives: {
     ...darwiniaDerive,
     ...derives
