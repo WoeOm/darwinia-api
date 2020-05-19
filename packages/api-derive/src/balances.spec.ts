@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { ApiPromise, WsProvider } from '@polkadot/api';
+import { ApiPromise, WsProvider } from '@darwinia/api';
 
 import { TypeRegistry, Option } from '@polkadot/types';
 
@@ -10,9 +10,6 @@ import * as definitions from '@darwinia/types/interfaces/definitions';
 import jsonrpc from '@darwinia/types/interfaces/jsonrpc';
 
 import type { StakingLedgerT } from '@darwinia/types/interfaces';
-
-import * as balances from '@polkadot/api-derive/balances';
-import { UnsubscribePromise } from '@polkadot/api/types';
 
 let api: ApiPromise;
 
@@ -22,17 +19,19 @@ beforeAll(async () => {
   const types = Object.values(definitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
   const provider = new WsProvider('wss://crab.darwinia.network');
 
-  api = await ApiPromise.create({
-    provider,
-    rpc: {
-      ...jsonrpc
-    },
-    types: {
-      ...types
-      // aliasses that don't do well as part of interfaces
-      // chain-specific overrides
-    }
-  });
+  // api = await ApiPromise.create({
+  //   provider,
+  //   rpc: {
+  //     ...jsonrpc
+  //   },
+  //   types: {
+  //     ...types
+  //     // aliasses that don't do well as part of interfaces
+  //     // chain-specific overrides
+  //   }
+  // });
+
+  api = await new ApiPromise({ provider }).isReady;
 
   // const hash = await api.rpc.chain.getBlockHash(77934);
   // const block = await api.rpc.chain.getBlock(hash);

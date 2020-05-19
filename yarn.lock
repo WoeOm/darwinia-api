@@ -1379,7 +1379,47 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@darwinia/types@workspace:packages/interfaces":
+"@darwinia/api-derive@workspace:packages/api-derive":
+  version: 0.0.0-use.local
+  resolution: "@darwinia/api-derive@workspace:packages/api-derive"
+  dependencies:
+    "@babel/runtime": ^7.9.6
+    "@polkadot/api": 1.14.0-beta.18
+    "@polkadot/keyring": ^2.10.0-beta.5
+    "@polkadot/rpc-core": 1.14.0-beta.18
+    "@polkadot/rpc-provider": 1.14.0-beta.18
+    "@polkadot/types": 1.14.0-beta.18
+    "@polkadot/util": ^2.10.0-beta.5
+    "@polkadot/util-crypto": ^2.10.0-beta.5
+    bn.js: ^5.1.1
+    memoizee: ^0.4.14
+    rxjs: ^6.5.5
+  languageName: unknown
+  linkType: soft
+
+"@darwinia/api-options@1.14.0-beta.18, @darwinia/api-options@workspace:packages/api-options":
+  version: 0.0.0-use.local
+  resolution: "@darwinia/api-options@workspace:packages/api-options"
+  dependencies:
+    "@babel/runtime": ^7.9.6
+    "@darwinia/types": 1.14.0-beta.18
+    "@polkadot/api": 1.14.0-beta.18
+  languageName: unknown
+  linkType: soft
+
+"@darwinia/api@workspace:packages/api":
+  version: 0.0.0-use.local
+  resolution: "@darwinia/api@workspace:packages/api"
+  dependencies:
+    "@babel/runtime": ^7.9.6
+    "@darwinia/api-options": 1.14.0-beta.18
+    "@polkadot/api": 1.14.0-beta.18
+    "@polkadot/keyring": ^2.10.0-beta.5
+    "@polkadot/rpc-provider": 1.14.0-beta.18
+  languageName: unknown
+  linkType: soft
+
+"@darwinia/types@1.14.0-beta.18, @darwinia/types@workspace:packages/interfaces":
   version: 0.0.0-use.local
   resolution: "@darwinia/types@workspace:packages/interfaces"
   languageName: unknown
@@ -2632,13 +2672,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/api-derive@1.14.0-beta.18, @polkadot/api-derive@workspace:packages/api-derive":
-  version: 0.0.0-use.local
-  resolution: "@polkadot/api-derive@workspace:packages/api-derive"
+"@polkadot/api-derive@npm:1.14.0-beta.18":
+  version: 1.14.0-beta.18
+  resolution: "@polkadot/api-derive@npm:1.14.0-beta.18"
   dependencies:
     "@babel/runtime": ^7.9.6
     "@polkadot/api": 1.14.0-beta.18
-    "@polkadot/keyring": ^2.10.0-beta.5
     "@polkadot/rpc-core": 1.14.0-beta.18
     "@polkadot/rpc-provider": 1.14.0-beta.18
     "@polkadot/types": 1.14.0-beta.18
@@ -2647,8 +2686,9 @@ __metadata:
     bn.js: ^5.1.1
     memoizee: ^0.4.14
     rxjs: ^6.5.5
-  languageName: unknown
-  linkType: soft
+  checksum: 3/80e9fc5f3db1fbb1576c44645ba561a8df40a75ee739912e23d1b76824863a5df7dc64752fcef398104c213289c62b930c211689c044cea553488f316ca55a59
+  languageName: node
+  linkType: hard
 
 "@polkadot/api@npm:1.14.0-beta.18":
   version: 1.14.0-beta.18
@@ -15579,7 +15619,6 @@ fsevents@^2.1.2:
     "@babel/core": ^7.9.6
     "@babel/register": ^7.9.0
     "@babel/runtime": ^7.9.6
-    "@polkadot/api": 1.14.0-beta.18
     "@polkadot/dev": ^0.52.19
     "@polkadot/ts": ^0.3.21
     "@polkadot/typegen": "workspace:packages/typegen"

@@ -6,10 +6,11 @@ const config = require('@polkadot/dev/config/jest');
 
 module.exports = Object.assign({}, config, {
   moduleNameMapper: {
-    '@darwinia/api(.*)$': '<rootDir>/packages/api/src/$1',
     '@darwinia/api-derive(.*)$': '<rootDir>/packages/api-derive/src/$1',
-    '@darwinia/types(.*)$': '<rootDir>/packages/interfaces/src/$1',
-    '@polkadot/api-options(.*)$': '<rootDir>/packages/api-options/src/$1'
+    '@darwinia/api-options(.*)$': '<rootDir>/packages/api-options/src/$1',
+    // eslint-disable-next-line sort-keys
+    '@darwinia/api(.*)$': '<rootDir>/packages/api/src/$1',
+    '@darwinia/types(.*)$': '<rootDir>/packages/interfaces/src/$1'
   },
   modulePathIgnorePatterns: [
     '<rootDir>/packages/api-derive/build',
