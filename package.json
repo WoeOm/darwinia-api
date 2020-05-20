@@ -21,7 +21,11 @@
     "postinstall": "polkadot-dev-yarn-only",
     "test": "polkadot-dev-run-test --coverage --runInBand --testPathIgnorePatterns e2e",
     "test:one": "polkadot-dev-run-test",
-    "test:watch": "polkadot-dev-run-test --watch"
+    "test:watch": "polkadot-dev-run-test --watch",
+    "build-interfaces": "yarn generate:defs && yarn generate:meta",
+    "generate:defs": "ts-node --skip-project packages/typegen/scripts/polkadot-types-chain-info --package @darwinia/types/interfaces --input packages/types/src/interfaces",
+    "generate:meta": "ts-node --skip-project packages/typegen/scripts/polkadot-types-from-chain --package @darwinia/types/interfaces --endpoint ./darwinia.json --output packages/types/src/interfaces",
+    "generate:interfaceRegistry": "node packages/types/scripts/fromDefs.js"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -32,6 +36,7 @@
     "@polkadot/typegen": "workspace:packages/typegen",
     "@types/jest": "^25.2.1",
     "@vuepress/plugin-search": "^1.4.1",
-    "copyfiles": "^2.2.0"
+    "copyfiles": "^2.2.0",
+    "ts-node": "^8.10.1"
   }
 }

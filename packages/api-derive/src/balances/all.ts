@@ -11,7 +11,7 @@ import BN from 'bn.js';
 import { Observable, combineLatest, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ApiInterfaceRx } from '@polkadot/api/types';
-import { Option, Vec } from '@polkadot/types';
+import { Vec } from '@polkadot/types';
 import { bnMax } from '@polkadot/util';
 
 import { memo } from '../util';

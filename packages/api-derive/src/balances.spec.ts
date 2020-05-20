@@ -32,19 +32,6 @@ beforeAll(async () => {
   // });
 
   api = await new ApiPromise({ provider }).isReady;
-
-  // const hash = await api.rpc.chain.getBlockHash(77934);
-  // const block = await api.rpc.chain.getBlock(hash);
-
-  // console.log(block);
-
-  // // get a query
-  // const ledgerOpt: Option<StakingLedgerT> = await api.query.staking.ledger('5HE1gjo5cRP5Xzf42zrc3gExws6zqrtnMsHTi3jZ5KbLpKnd');
-
-  // // the types match with what we expect here
-  // const ledger: StakingLedgerT | null = ledgerOpt.unwrapOr(null);
-
-  // console.log(ledger && ledger.toHuman());
 });
 
 afterAll(() => {

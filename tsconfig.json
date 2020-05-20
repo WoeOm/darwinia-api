@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/@polkadot/dev/config/tsconfig",
+  "extends": "@polkadot/dev/config/tsconfig",
   "exclude": [
     "build/**/*",
     "**/build/**/*",
@@ -13,12 +13,18 @@
       "@darwinia/api/*": ["packages/api/src/*"],
       "@darwinia/api-options": ["packages/api-options/src"],
       "@darwinia/api-options/*": ["packages/api-options/src/*"],
-      "@darwinia/types": ["packages/interfaces/src"],
-      "@darwinia/types/*": ["packages/interfaces/src/*"],
+      "@darwinia/types": ["packages/types/src"],
+      "@darwinia/types/*": ["packages/types/src/*"],
+      "@polkadot/types": ["packages/polkadot-types/src"],
+      "@polkadot/types/*": ["packages/polkadot-types/src/*"],
+      "@polkadot/typegen": ["packages/typegen/src"],
+      "@polkadot/typegen/*": ["packages/typegen/src/*"],
       "@darwinia/api-derive": ["packages/api-derive/src"],
       "@darwinia/api-derive/*": ["packages/api-derive/src/*"],
-      "@polkadot/api/augment": ["packages/interfaces/src/interfaces/augment-api.ts"],
-      "@polkadot/types/augment": ["packages/interfaces/src/interfaces/augment-types.ts"]
+      "@polkadot/api-derive": ["packages/api-derive/src"],
+      "@polkadot/api-derive/*": ["packages/api-derive/src/*"],
+      "@polkadot/api/augment": ["packages/types/src/interfaces/augment-api.ts"],
+      "@polkadot/types/augment": ["packages/types/src/interfaces/augment-types.ts"]
     },
     "skipLibCheck": true,
     "typeRoots": [
