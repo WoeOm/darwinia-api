@@ -1,5 +1,5 @@
 {
-    "name": "@darwinia/api",
+    "name": "@darwinia/apps-api",
     "version": "1.14.0-beta.18",
     "description": "Promise and RxJS wrappers around the Polkadot JS RPC",
     "main": "index.js",

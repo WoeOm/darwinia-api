@@ -9,8 +9,8 @@
     "baseUrl": ".",
     "paths":
     {
-      "@darwinia/api": ["packages/api/src"],
-      "@darwinia/api/*": ["packages/api/src/*"],
+      "@darwinia/apps-api": ["packages/api/src"],
+      "@darwinia/apps-api/*": ["packages/api/src/*"],
       "@darwinia/api-options": ["packages/api-options/src"],
       "@darwinia/api-options/*": ["packages/api-options/src/*"],
       "@darwinia/types": ["packages/types/src"],

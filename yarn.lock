@@ -1407,9 +1407,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@darwinia/api@workspace:packages/api":
+"@darwinia/apps-api@workspace:packages/api":
   version: 0.0.0-use.local
-  resolution: "@darwinia/api@workspace:packages/api"
+  resolution: "@darwinia/apps-api@workspace:packages/api"
   dependencies:
     "@babel/runtime": ^7.9.6
     "@darwinia/api-options": 1.14.0-beta.18
