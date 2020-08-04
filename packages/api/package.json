@@ -1,6 +1,6 @@
 {
     "name": "@darwinia/apps-api",
-    "version": "1.14.0-beta.18",
+    "version": "1.27.1",
     "description": "Promise and RxJS wrappers around the Polkadot JS RPC",
     "main": "index.js",
     "keywords": [
@@ -27,7 +27,7 @@
     "homepage": "https://github.com/polkadot-js/api/tree/master/packages/api#readme",
     "dependencies": {
         "@babel/runtime": "^7.9.6",
-        "@darwinia/api-options": "1.14.0-beta.18",
+        "@darwinia/api-options": "^1.27.1",
         "@polkadot/api": "1.14.0-beta.18",
         "@polkadot/keyring": "^2.10.0-beta.5",
         "@polkadot/rpc-provider": "1.14.0-beta.18"
